@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 
 class CounterView1 extends StatefulWidget {
   final int initNumber;
-  final Function(int) counterCallback;
-  final Function increaseCallback;
 
-  final Function decreaseCallback;
-  CounterView1(
-      {this.initNumber,
-      this.counterCallback,
-      this.increaseCallback,
-      this.decreaseCallback});
+  CounterView1({
+    this.initNumber,
+  });
   @override
   _CounterViewState createState() => _CounterViewState();
 }
@@ -20,21 +15,6 @@ class _CounterViewState extends State<CounterView1> {
   int _currentCountDinn = 0;
   int _currentCountBrake = 0;
   int couponsavail = 24;
-
-  Function _counterCallback;
-  Function _increaseCallback;
-  Function _decreaseCallback;
-
-  @override
-  void initState() {
-    // _currentCount = widget.initNumber ?? 1;
-    //_currentCountDinn = widget.initNumber ?? 1;
-    //_currentCountBrake = widget.initNumber ?? 1;
-    _counterCallback = widget.counterCallback ?? (int number) {};
-    _increaseCallback = widget.increaseCallback ?? () {};
-    _decreaseCallback = widget.decreaseCallback ?? () {};
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -98,8 +78,6 @@ class _CounterViewState extends State<CounterView1> {
     setState(() {
       _currentCount++;
       couponsavail--;
-      _counterCallback(_currentCount);
-      _increaseCallback();
     });
   }
 
@@ -108,8 +86,6 @@ class _CounterViewState extends State<CounterView1> {
       if (_currentCount > 0) {
         _currentCount--;
         couponsavail++;
-        _counterCallback(_currentCount);
-        _decreaseCallback();
       }
     });
   }
@@ -118,8 +94,6 @@ class _CounterViewState extends State<CounterView1> {
     setState(() {
       _currentCountDinn++;
       couponsavail--;
-      _counterCallback(_currentCount);
-      _increaseCallback();
     });
   }
 
@@ -128,8 +102,6 @@ class _CounterViewState extends State<CounterView1> {
       if (_currentCountDinn > 0) {
         _currentCountDinn--;
         couponsavail++;
-        _counterCallback(_currentCount);
-        _decreaseCallback();
       }
     });
   }
@@ -138,8 +110,6 @@ class _CounterViewState extends State<CounterView1> {
     setState(() {
       _currentCountBrake++;
       couponsavail--;
-      _counterCallback(_currentCount);
-      _increaseCallback();
     });
   }
 
@@ -148,8 +118,6 @@ class _CounterViewState extends State<CounterView1> {
       if (_currentCount > 0) {
         _currentCountBrake--;
         couponsavail++;
-        _counterCallback(_currentCount);
-        _decreaseCallback();
       }
     });
   }
