@@ -83,7 +83,7 @@ class _CounterViewState extends State<CounterView1> {
 
   void _dicrement() {
     setState(() {
-      if (_currentCount >= 0) {
+      if (_currentCount > 0) {
         _currentCount--;
         couponsavail++;
       }
@@ -99,7 +99,7 @@ class _CounterViewState extends State<CounterView1> {
 
   void _dicrementDin() {
     setState(() {
-      if (_currentCountDinn >= 0) {
+      if (_currentCountDinn > 0) {
         _currentCountDinn--;
         couponsavail++;
       }
@@ -115,15 +115,12 @@ class _CounterViewState extends State<CounterView1> {
 
   void _dicrementBra() {
     setState(() {
-      if (_currentCount >= 0) {
+      if (_currentCountBrake >0) {
         _currentCountBrake--;
         couponsavail++;
       }
     });
   }
-  //void coupon() {
-  //setState(() {});
-  //}
 
   Widget _createIncrementDicrementButton(IconData icon, Function onPressed) {
     return RawMaterialButton(
