@@ -115,7 +115,7 @@ class _CounterViewState extends State<CounterView1> {
 
   void _dicrementBra() {
     setState(() {
-      if (_currentCountBrake >0) {
+      if (_currentCountBrake > 0) {
         _currentCountBrake--;
         couponsavail++;
       }
