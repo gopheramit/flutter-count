@@ -154,8 +154,10 @@ class _FoodCouponState extends State<FoodCoupon> {
 
   void _increment() {
     setState(() {
-      _currentCount++;
-      couponsavail--;
+      if (couponsavail > 0) {
+        _currentCount++;
+        couponsavail--;
+      }
     });
   }
 
@@ -169,10 +171,12 @@ class _FoodCouponState extends State<FoodCoupon> {
   }
 
   void _incrementDin() {
-    setState(() {
-      _currentCountDinn++;
-      couponsavail--;
-    });
+    if (couponsavail > 0) {
+      setState(() {
+        _currentCountDinn++;
+        couponsavail--;
+      });
+    }
   }
 
   void _dicrementDin() {
@@ -185,10 +189,12 @@ class _FoodCouponState extends State<FoodCoupon> {
   }
 
   void _incrementBra() {
-    setState(() {
-      _currentCountBrake++;
-      couponsavail--;
-    });
+    if (couponsavail > 0) {
+      setState(() {
+        _currentCountBrake++;
+        couponsavail--;
+      });
+    }
   }
 
   void _dicrementBra() {
